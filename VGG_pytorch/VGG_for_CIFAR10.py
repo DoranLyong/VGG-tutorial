@@ -67,7 +67,7 @@ print(f"device: {device}")
 # %% 03. 하이퍼파라미터 설정 
 num_classes = 10 
 learning_rate = 1e-4
-batch_size = 64   # 메모리가 부족하면 사이즈를 줄일 것 
+batch_size = 32   # 메모리가 부족하면 사이즈를 줄일 것 
 NUM_EPOCHS = 40
 
 SEED = 42 # set seed 
@@ -161,7 +161,6 @@ scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,factor=0.1, pat
 
 # %% Train-loo  정의 
 def train(epoch):
-    global NUM_EPOCHS, scheduler 
 
     model.train()  
 
