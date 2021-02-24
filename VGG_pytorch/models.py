@@ -50,7 +50,7 @@ class VGG_net(nn.Module):
         """ 좀더 네트워크 생성을 일반화 시키기 위해 (옵션 입력을 가변적으로 받아서 VGG11, VGG13... 을 생성)
         """
         layers = []  # 레이어 아키텍쳐 초기화 
-        in_channels = self.in_channels
+        in_channels = self.in_channels  # 첫 입력 데이터의 채널 길이 
 
 
         for x in architecture:
