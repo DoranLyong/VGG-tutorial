@@ -22,7 +22,7 @@ class VGG_net(nn.Module):
         
         """ Conv. layers 정의 
         """
-        self.in_channels = in_channels
+        self.in_channels = in_channels # 첫 입력 데이터의 채널 길이 
         self.conv_layers = self.create_conv_layers(VGG_types['VGG16'])  #정의된 아키텍쳐의 모든 레이어를 한 곳으로 가져오기 
         
 
