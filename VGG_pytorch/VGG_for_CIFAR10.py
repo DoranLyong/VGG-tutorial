@@ -181,7 +181,9 @@ def train(epoch):
         """
         scores = model(data)   # 모델이 예측한 수치 
         loss = criterion(scores, targets)
-        train_losses.append(loss.item())
+        train_losses.append(loss.item())    # loss 객체의 value 만 가져와서 메모리 사용량을 줄임; loss.item()
+                                            # (왜?) loss 객체 전체를 반환하면 변수 객체의 용량이 커지니까 
+                                            # (ref) https://pytorch.org/docs/stable/notes/faq.html
 
         _, predictions = scores.max(1)
         num_correct += predictions.eq(targets).sum().item()   #  맞춘 샘플 개수 
